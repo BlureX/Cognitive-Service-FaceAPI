@@ -42,10 +42,9 @@ function sendImage(file, callback) {
         beforeSend: function (xhrObj) {
             xhrObj.setRequestHeader("Content-Type", "application/octet-stream");
             xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "853f1791a953444db95387aa0313c142");
-            xhrObj.setRequestHeader("Host", "api.projectoxford.ai");
         },
         type: "POST",
-        data: file,
+        url: file
     })
         .done(function (data) {
         if (data) {
