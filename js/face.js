@@ -23,7 +23,7 @@ function processImage(callback) {
     var image = currentImage.files[0];
     var reader = new FileReader();
     if (image) {
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(image);
     }
     else {
         response.innerHTML = "Invalid file";
