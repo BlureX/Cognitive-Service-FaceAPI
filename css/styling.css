@@ -3,10 +3,19 @@
     text-align: center;
     font-size: 5vw;
     font-family:Agency FB;
+        color: #ffffff;
 }
 
 .minititle {
     text-align: center;
     font-size: 2.3vw;
     font-family:Agency FB;
+        color: #ffffff;
+}
+
+.content{
+  text-align: center;
+  align-self: center;
+      font-family:Agency FB;
+    color: #ffffff;
 }

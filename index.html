@@ -10,6 +10,32 @@
 <link rel="stylesheet" href="css/styling.css">
 
 
+<style>
+body {
+  background: url(bg.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+</style>
+
+<!--
+To collect end-user usage analytics about your application,
+insert the following script into each page you want to track.
+Place this code immediately before the closing </head> tag,
+and before any other scripts. Your first data will appear
+automatically in just a few seconds.
+-->
+<script type="text/javascript">
+  var appInsights=window.appInsights||function(config){
+    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
+    }({
+        instrumentationKey:"89504622-01b1-40a0-841f-197572f9246c"
+    });
+
+    window.appInsights=appInsights;
+    appInsights.trackPageView();
+</script>
+
 <head>
   <title>TEST</title>
   </head>
@@ -18,7 +44,7 @@
        Guess your Age!
     </div>
 
-    <div>
+    <div class="content">
       <h1 class="minititle"> Upload an image of someone and we will try guess their age! </h1>
       <div class="btn-wrapper">
         <label class="btn btn-info" for="image-file" id="button-label">
@@ -27,12 +53,9 @@
         </label>
         <h4 id="loading-message"></h4>
       </div>
-    </div>
-
-    <div >
+      <div id="celeb-image"><img id="selected-image" src="" alt="No image uploaded yet"></div>
       <h1 id="returnValue"> Nothing Yet
       </h1>
-
 
     </div>
     <!-- <div class="container-fluid">
