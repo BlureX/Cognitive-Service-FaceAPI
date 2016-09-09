@@ -6,24 +6,45 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="styling.css">
 
+
 <head>
   <title>TEST</title>
   </head>
   <body>
     <div class="title">
-       Guess your Age! 
+       Guess your Age!
     </div>
 
     <div>
       <h1 class="minititle"> Upload an image of someone and we will try guess their age! </h1>
       <div class="btn-wrapper">
         <label class="btn btn-info" for="image-file" id="button-label">
-          <input id="file-list" type="file" onchange="readUrl(this);">
-          Upload Image
+          <input id="image-file" type="file" onchange="readUrl(this);">
+          Upload an Image
         </label>
-        <h4 id="status-message"></h4>
+        <h4 id="loading-message"></h4>
       </div>
     </div>
+
+    <div >
+      <h1 id="returnValue"> Nothing Yet
+      </h1>
+
+
+    </div>
+    <!-- <div class="container-fluid">
+  <div class="col-sm-4" id="image-panel">
+    <div id="person-name">Celebrity</div>
+    <div id="celeb-image"><img id="selected-image" src="" alt="No image uploaded yet"></div>
+  </div>
+  <div class="col-sm-8" id="data-panel">
+    <div id="details-title">Details</div>
+    <div id="details">
+      <p id="details-placeholder"> No details to show yet </p>
+    </div>
+  </div>
+</div> -->
+<script type="text/javascript" src="js\face.js"></script>
   </body>
 
 
