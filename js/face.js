@@ -22,7 +22,7 @@ function readUrl(input) {
 function processImage(callback) {
     var image = currentImage.files[0];
     var reader = new FileReader();
-    if (file) {
+    if (image) {
         reader.readAsDataURL(file);
     }
     else {
