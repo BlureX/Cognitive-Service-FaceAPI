@@ -33,7 +33,7 @@ function processImage(callback) {
             response.innerHTML = "Image file (jpg, jpeg, png) required.";
         }
         else {
-            callback(file);
+            callback(image);
         }
     };
 }
