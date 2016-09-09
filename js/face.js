@@ -38,13 +38,13 @@ function processImage(callback) {
 
 function sendImage(file, callback) {
     $.ajax({
-        url: "https://api.projectoxford.ai/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=age&returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=age",
+        url: "https://api.projectoxford.ai/face/v1.0/detect?returnFaceAttributes=age&returnFaceAttributes=age",
         beforeSend: function (xhrObj) {
             xhrObj.setRequestHeader("Content-Type", "application/octet-stream");
             xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "853f1791a953444db95387aa0313c142");
         },
         type: "POST",
-        url: file
+        data: file
     })
         .done(function (data) {
         if (data) {
