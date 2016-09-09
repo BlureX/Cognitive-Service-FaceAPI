@@ -3,9 +3,7 @@ var status_message = $("#loading-message")[0];
 
 currentImage.addEventListener("change", function () {
     status_message.innerHTML = "Calculating Age...";
-    var file = currentImage[0];
-    sendImage(file, function () {});
-
+      sendImage(currentImage.files[0], function () {});
 });
 
 function readUrl(input) {
@@ -15,26 +13,24 @@ function readUrl(input) {
     }
 }
 
-function processImage(callback) {
-    var file = currentImage[0];
-    var reader = new FileReader();
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-    else {
-        // status_message.innerHTML = "Invalid file";
-        // person_name.innerHTML = "Cannot obtain name for this file";
-        console.log("Invalid file");
-    }
-    reader.onloadend = function (e) {
-        if (!file.name.match(/\.(jpg|jpeg|png)$/)) {
-            status_message.innerHTML = "Please upload an image file (jpg or png).";
-        }
-        else {
-            callback(file);
-        }
-    };
-}
+// function processImage(callback){
+//   var file = currentImage.files[0];
+//   var reader = new FileReader();
+//   if (file) {
+//     reader.readAsDataURL(file); //used to read the contents of the file
+//   } else {
+//     // status_message.innerHTML = "Invalid file";
+//     // person_name.innerHTML = "Cannot obtain name for this file";
+//     console.log("Invalid file");
+//   }
+//   reader.onloadend = function (e) {
+//     if (!file.name.match(/\.(jpg|jpeg|png)$/)) {
+//       // status_message.innerHTML = "Please upload an image file (jpg or png).";
+//     } else {
+//       callback(file);
+//     }
+//   }
+// }
 
 function sendImage(file, callback) {
     $.ajax({
@@ -44,10 +40,12 @@ function sendImage(file, callback) {
             xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "853f1791a953444db95387aa0313c142");
         },
         type: "POST",
-        data: file
+        data: file,
+        processData: false
     })
         .done(function (data) {
         if (data) {
+            console.log("YES");
             console.log(data);
         }
         else {
@@ -55,6 +53,9 @@ function sendImage(file, callback) {
         }
     })
         .fail(function (error) {
+            console.log("NOPE");
         console.log(error);
     });
+
+
 }
