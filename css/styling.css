@@ -14,8 +14,13 @@
 }
 
 .content{
+  padding: 2vw;
   text-align: center;
   align-self: center;
       font-family:Agency FB;
     color: #ffffff;
+}
+
+input#image-file {
+  display: none;
 }

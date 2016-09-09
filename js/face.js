@@ -9,7 +9,7 @@ currentImage.addEventListener("change", function () {
     })
 });
 
-function readUrl(input) {
+function readPicture(input) {
     if (input.files) {
         var image_reader = new FileReader();
         image_reader.onload = function (e) {

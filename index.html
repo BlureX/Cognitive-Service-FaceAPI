@@ -48,28 +48,16 @@ automatically in just a few seconds.
       <h1 class="minititle"> Upload an image of someone and we will try guess their age! </h1>
       <div class="btn-wrapper">
         <label class="btn btn-info" for="image-file" id="button-label">
-          <input id="image-file" type="file" onchange="readUrl(this);">
+          <input id="image-file" type="file" title=" " onchange="readPicture(this);">
           Upload an Image
         </label>
-        <h4 id="loading-message"></h4>
       </div>
-      <div id="celeb-image"><img id="selected-image" src="" alt="No image uploaded yet"></div>
+      <div><img id="selected-image" src="" alt="No image uploaded yet" style="padding-top:1vw"></div>
       <h1 id="returnValue"> Nothing Yet
       </h1>
 
     </div>
-    <!-- <div class="container-fluid">
-  <div class="col-sm-4" id="image-panel">
-    <div id="person-name">Celebrity</div>
-    <div id="celeb-image"><img id="selected-image" src="" alt="No image uploaded yet"></div>
-  </div>
-  <div class="col-sm-8" id="data-panel">
-    <div id="details-title">Details</div>
-    <div id="details">
-      <p id="details-placeholder"> No details to show yet </p>
-    </div>
-  </div>
-</div> -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
